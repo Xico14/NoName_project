@@ -1,0 +1,177 @@
+:root {
+  /* Motion duration tokens */
+  --duration-fast: 120ms;
+  --duration-normal: 220ms;
+  --duration-slow: 360ms;
+
+  /* Motion easing tokens */
+  --easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
+  --easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --easing-decelerate: cubic-bezier(0, 0, 0, 1);
+
+  /* Shared effects */
+  --shadow-focus: 0 0 0 3px rgb(59 130 246 / 0.35);
+  --shadow-lifted: 0 10px 24px rgb(15 23 42 / 0.14);
+  --scale-hover: 1.02;
+  --scale-press: 0.98;
+}
+
+/* Interactive micro-interactions */
+.button,
+.card,
+.tab {
+  transition-property: transform, box-shadow, background-color, border-color, color, opacity;
+  transition-duration: var(--duration-normal);
+  transition-timing-function: var(--easing-standard);
+  will-change: transform;
+}
+
+.button:hover,
+.card:hover,
+.tab:hover {
+  transform: translateY(-1px) scale(var(--scale-hover));
+  box-shadow: var(--shadow-lifted);
+}
+
+.button:active,
+.card:active,
+.tab:active,
+.button[data-state='pressed'],
+.card[data-state='pressed'],
+.tab[data-state='pressed'] {
+  transform: scale(var(--scale-press));
+  transition-duration: var(--duration-fast);
+  transition-timing-function: var(--easing-emphasized);
+}
+
+.button:focus-visible,
+.card:focus-visible,
+.tab:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+.button[data-state='success'],
+.card[data-state='success'],
+.tab[data-state='success'] {
+  animation: success-pulse var(--duration-slow) var(--easing-decelerate) 1;
+}
+
+@keyframes success-pulse {
+  0% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+
+  35% {
+    transform: scale(1.035);
+    filter: brightness(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
+/* Context-preserving screen transitions */
+@supports (view-transition-name: root) {
+  .screen-root {
+    view-transition-name: screen;
+  }
+
+  .shared-element {
+    view-transition-name: shared-element;
+  }
+
+  ::view-transition-old(screen),
+  ::view-transition-new(screen) {
+    animation-duration: var(--duration-normal);
+    animation-timing-function: var(--easing-standard);
+  }
+
+  ::view-transition-old(shared-element),
+  ::view-transition-new(shared-element) {
+    animation-duration: var(--duration-slow);
+    animation-timing-function: var(--easing-emphasized);
+  }
+}
+
+@supports not (view-transition-name: root) {
+  .screen-enter {
+    animation: screen-soft-enter var(--duration-normal) var(--easing-standard) both;
+  }
+
+  .screen-exit {
+    animation: screen-soft-exit var(--duration-fast) var(--easing-decelerate) both;
+  }
+
+  .shared-element {
+    transition: transform var(--duration-normal) var(--easing-emphasized),
+      opacity var(--duration-normal) var(--easing-standard);
+  }
+}
+
+@keyframes screen-soft-enter {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes screen-soft-exit {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+/* Reduced motion fallback */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 40ms;
+    --duration-normal: 60ms;
+    --duration-slow: 80ms;
+  }
+
+  .button,
+  .card,
+  .tab,
+  .screen-enter,
+  .screen-exit,
+  .shared-element {
+    animation: none !important;
+    transition-property: background-color, border-color, color, opacity, box-shadow;
+    transform: none !important;
+  }
+
+  .button:hover,
+  .card:hover,
+  .tab:hover,
+  .button:active,
+  .card:active,
+  .tab:active {
+    transform: none;
+  }
+
+  .button:focus-visible,
+  .card:focus-visible,
+  .tab:focus-visible {
+    box-shadow: var(--shadow-focus);
+  }
+
+  .button[data-state='success'],
+  .card[data-state='success'],
+  .tab[data-state='success'] {
+    filter: saturate(1.15);
+    box-shadow: 0 0 0 2px rgb(34 197 94 / 0.35);
+  }
+}
