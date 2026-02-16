@@ -1,0 +1,116 @@
+:root {
+  /* Brand gradients */
+  --gradient-primary: linear-gradient(135deg, #5b7cfa 0%, #7b5cff 45%, #00d4ff 100%);
+  --gradient-secondary: linear-gradient(135deg, #ff7a59 0%, #ff4f9a 50%, #ffc857 100%);
+
+  /* Neutral palette */
+  --neutral-light-0: #ffffff;
+  --neutral-light-50: #f8f9fc;
+  --neutral-light-100: #eef1f7;
+  --neutral-light-200: #d9deeb;
+  --neutral-light-700: #4b556d;
+  --neutral-light-900: #1f2430;
+
+  --neutral-dark-0: #f5f7ff;
+  --neutral-dark-100: #c9d0e2;
+  --neutral-dark-700: #394158;
+  --neutral-dark-800: #232a3d;
+  --neutral-dark-900: #151a28;
+  --neutral-dark-950: #0b0f1a;
+
+  /* Fixed radius tokens */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+
+  /* Fixed elevation tokens */
+  --elevation-1: 0 2px 6px rgba(11, 15, 26, 0.08);
+  --elevation-2: 0 8px 20px rgba(11, 15, 26, 0.12);
+  --elevation-3: 0 14px 34px rgba(11, 15, 26, 0.18);
+  --elevation-4: 0 24px 56px rgba(11, 15, 26, 0.22);
+
+  /* Fixed effect token */
+  --glow-primary: 0 0 0 1px rgba(91, 124, 250, 0.35), 0 0 28px rgba(0, 212, 255, 0.35);
+
+  /* Borders */
+  --border-subtle: 1px solid rgba(255, 255, 255, 0.26);
+  --border-strong: 1px solid rgba(21, 26, 40, 0.14);
+
+  /* Adaptive depth */
+  --panel-bg-light: rgba(255, 255, 255, 0.7);
+  --panel-bg-dark: rgba(21, 26, 40, 0.6);
+  --panel-blur: 14px;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --page-bg: radial-gradient(circle at 20% 0%, #1f2a4f 0%, #0b0f1a 58%);
+  --text-primary: var(--neutral-dark-0);
+  --text-secondary: var(--neutral-dark-100);
+  --surface-1: var(--neutral-dark-900);
+  --surface-2: var(--neutral-dark-800);
+  --panel-bg: var(--panel-bg-dark);
+  --panel-border: var(--border-subtle);
+}
+
+[data-theme='light'],
+:root:not([data-theme]) {
+  color-scheme: light;
+  --page-bg: radial-gradient(circle at 20% 0%, #eef3ff 0%, #f8f9fc 55%, #eef1f7 100%);
+  --text-primary: var(--neutral-light-900);
+  --text-secondary: var(--neutral-light-700);
+  --surface-1: var(--neutral-light-0);
+  --surface-2: var(--neutral-light-50);
+  --panel-bg: var(--panel-bg-light);
+  --panel-border: var(--border-strong);
+}
+
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: var(--page-bg);
+  color: var(--text-primary);
+}
+
+/* Signature detail reused across key screens */
+.signature-header {
+  background: var(--gradient-primary);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  padding: 1.2rem 1.6rem;
+  box-shadow: var(--elevation-2), var(--glow-primary);
+}
+
+.gradient-badge {
+  background: var(--gradient-secondary);
+  border-radius: var(--radius-sm);
+  color: #fff;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.35rem 0.55rem;
+}
+
+.adaptive-panel {
+  background: var(--panel-bg);
+  border: var(--panel-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--elevation-2);
+  backdrop-filter: blur(var(--panel-blur));
+  -webkit-backdrop-filter: blur(var(--panel-blur));
+}
+
+.depth-1 { box-shadow: var(--elevation-1); }
+.depth-2 { box-shadow: var(--elevation-2); }
+.depth-3 { box-shadow: var(--elevation-3); }
+.depth-4 { box-shadow: var(--elevation-4); }
+
+.glow-primary { box-shadow: var(--elevation-2), var(--glow-primary); }
+
+.card {
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  background: var(--surface-1);
+  border: var(--panel-border);
+}

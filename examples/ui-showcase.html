@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design System Showcase</title>
+    <link rel="stylesheet" href="../styles/design-tokens.css" />
+    <style>
+      .page {
+        max-width: 960px;
+        margin: 2rem auto;
+        padding: 0 1rem 2rem;
+        display: grid;
+        gap: 1rem;
+      }
+      .layout {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+      h1, h2, p { margin: 0; }
+      .signature-header p { opacity: 0.92; margin-top: 0.45rem; }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header class="signature-header">
+        <span class="gradient-badge">Signature Detail</span>
+        <h1>Live Gradient Header</h1>
+        <p>Reusable brand anchor for dashboard, onboarding, and profile key screens.</p>
+      </header>
+
+      <section class="layout">
+        <article class="adaptive-panel card depth-2">
+          <h2>Adaptive Depth / Glass</h2>
+          <p>Soft blur + controlled contrast for layered UI without overload.</p>
+        </article>
+        <article class="adaptive-panel card depth-3">
+          <h2>Elevation Tokens</h2>
+          <p>Use <code>elevation-1..4</code> via <code>depth-*</code> classes only.</p>
+        </article>
+        <article class="adaptive-panel card glow-primary">
+          <h2>Primary Glow</h2>
+          <p>Glow is reserved for focused, important interactive surfaces.</p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
