@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoName Project — MVP 2026</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-a" aria-hidden="true"></div>
+    <div class="bg-orb orb-b" aria-hidden="true"></div>
+
+    <main class="shell">
+      <header class="hero">
+        <p class="eyebrow">NoName Project • MVP</p>
+        <h1>Инновационный интерфейс 2026</h1>
+        <p class="subtitle">
+          Фронтенд уже подключен к backend API и отображает состояние сервиса в реальном времени.
+        </p>
+      </header>
+
+      <section class="panel" aria-live="polite">
+        <div class="status-row">
+          <span class="label">Состояние backend</span>
+          <span id="health-badge" class="badge loading">Проверяем...</span>
+        </div>
+        <dl class="meta-grid">
+          <div>
+            <dt>Сервис</dt>
+            <dd id="service-name">—</dd>
+          </div>
+          <div>
+            <dt>Версия</dt>
+            <dd id="service-version">—</dd>
+          </div>
+          <div>
+            <dt>Окружение</dt>
+            <dd id="service-env">—</dd>
+          </div>
+        </dl>
+        <button id="refresh-btn" class="btn" type="button">Обновить статус</button>
+      </section>
+    </main>
+
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>
