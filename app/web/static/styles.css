@@ -1,0 +1,167 @@
+:root {
+  color-scheme: dark;
+  --bg: #05070f;
+  --surface: rgba(20, 25, 44, 0.64);
+  --text: #f6f8ff;
+  --muted: #9fb0d9;
+  --accent: #79f0ff;
+  --accent-2: #b48cff;
+  --ok: #7dffa5;
+  --warn: #ffd96b;
+  --radius: 24px;
+  font-family: "Inter", "SF Pro Display", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at 10% 10%, #162039 0%, var(--bg) 55%);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.bg-orb {
+  position: fixed;
+  filter: blur(64px);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.orb-a {
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: var(--accent);
+  left: -80px;
+  top: 5vh;
+}
+
+.orb-b {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: var(--accent-2);
+  right: -60px;
+  bottom: 8vh;
+}
+
+.shell {
+  width: min(920px, 92vw);
+  display: grid;
+  gap: 1.5rem;
+  z-index: 1;
+}
+
+.hero,
+.panel {
+  backdrop-filter: blur(18px);
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 42px rgba(7, 10, 20, 0.45);
+}
+
+.hero {
+  padding: 2rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.9rem, 5vw, 3rem);
+}
+
+.subtitle {
+  color: var(--muted);
+  line-height: 1.5;
+  margin-top: 0.9rem;
+  max-width: 58ch;
+}
+
+.panel {
+  padding: 1.4rem;
+}
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.label {
+  color: var(--muted);
+}
+
+.badge {
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-weight: 600;
+}
+
+.badge.loading {
+  background: color-mix(in oklab, var(--warn), transparent 70%);
+  color: var(--warn);
+}
+
+.badge.ok {
+  background: color-mix(in oklab, var(--ok), transparent 72%);
+  color: var(--ok);
+}
+
+.badge.fail {
+  background: color-mix(in oklab, #ff8181, transparent 72%);
+  color: #ffb0b0;
+}
+
+.meta-grid {
+  margin: 1.1rem 0 1.2rem;
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+
+.meta-grid dt {
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin-bottom: 0.35rem;
+}
+
+.meta-grid dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.btn {
+  border: none;
+  border-radius: 12px;
+  padding: 0.68rem 1rem;
+  font-weight: 600;
+  color: #03131f;
+  background: linear-gradient(125deg, var(--accent), #a4f8ff);
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

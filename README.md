@@ -1,18 +1,22 @@
 # NoName_project
 
-MVP backend на FastAPI (Python 3.12+) с базовой production-ready структурой под стандарты 2026:
+MVP-платформа на FastAPI (Python 3.12+) с backend API и встроенным frontend-интерфейсом в стиле 2026:
 - конфигурация через `pydantic-settings`
 - структурированное логирование (`structlog`)
-- health-check endpoint
+- versioned API (`/api/v1/*`)
+- инновационный web UI (glassmorphism + realtime health status)
 - статический анализ (`ruff`, `mypy`) и тесты (`pytest`)
 
 ## Структура
 
-- `app/main.py` — входная точка FastAPI
+- `app/main.py` — входная точка FastAPI и подключение статики
 - `app/api/routes.py` — API-роуты (`/api/v1/health`)
+- `app/web/routes.py` — web-роуты (`/`)
+- `app/web/static/` — frontend (`index.html`, `styles.css`, `app.js`)
 - `app/core/config.py` — настройки приложения
 - `app/core/logging.py` — конфигурация логирования
 - `tests/test_health.py` — smoke-тест health-check
+- `tests/web/test_frontend.py` — smoke-тест frontend страницы
 
 ## Быстрый старт
 
@@ -21,11 +25,13 @@ MVP backend на FastAPI (Python 3.12+) с базовой production-ready ст�
    ```bash
    make install
    ```
-3. Запустить backend:
+3. Запустить приложение:
    ```bash
    make run
    ```
-4. Проверить health-check:
+4. Открыть UI:
+   - `http://localhost:8000/`
+5. Проверить API:
    ```bash
    curl http://localhost:8000/api/v1/health
    ```
@@ -37,7 +43,3 @@ make lint
 make typecheck
 make test
 ```
-
----
-
-Дальше можно переходить к frontend MVP с инновационным UX/UI и дизайн-системой 2026.
