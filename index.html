@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoName Product — Appearance Settings</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar card">
+        <h1 class="product-title">NoName</h1>
+        <nav class="nav">
+          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link active" href="#">Settings</a>
+          <a class="nav-link" href="#">Billing</a>
+          <a class="nav-link" href="#">Team</a>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <header class="page-header card">
+          <div>
+            <p class="eyebrow">Settings</p>
+            <h2>Appearance</h2>
+            <p class="muted">Theme, density and accent preferences are applied instantly and saved locally.</p>
+          </div>
+          <button class="secondary-btn" id="reset-preferences">Reset to defaults</button>
+        </header>
+
+        <section class="grid-two">
+          <article class="card">
+            <h3>Theme mode</h3>
+            <p class="muted">Choose automatic mode to follow your system preference.</p>
+            <div class="segmented" id="theme-mode-group" role="radiogroup" aria-label="Theme mode">
+              <button data-theme-mode="auto" class="segment">Auto</button>
+              <button data-theme-mode="light" class="segment">Light</button>
+              <button data-theme-mode="dark" class="segment">Dark</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Interface density</h3>
+            <p class="muted">Comfortable for readability, compact for high information density.</p>
+            <div class="segmented" id="density-group" role="radiogroup" aria-label="Density mode">
+              <button data-density="comfortable" class="segment">Comfortable</button>
+              <button data-density="compact" class="segment">Compact</button>
+            </div>
+          </article>
+
+          <article class="card span-two">
+            <h3>Brand accent</h3>
+            <p class="muted">Accent updates interactive highlights while keeping contrast and accessibility.</p>
+            <div class="accent-grid" id="accent-group" role="radiogroup" aria-label="Accent theme">
+              <button data-accent="ocean" class="accent-chip ocean">Ocean</button>
+              <button data-accent="violet" class="accent-chip violet">Violet</button>
+              <button data-accent="sunset" class="accent-chip sunset">Sunset</button>
+            </div>
+          </article>
+        </section>
+
+        <section class="card">
+          <h3>Preview</h3>
+          <p class="muted">Simulated product surface to validate readability and spacing.</p>
+          <div class="preview-panel">
+            <div class="kpi-row">
+              <article class="kpi card soft">
+                <p class="kpi-label">Monthly Active Users</p>
+                <p class="kpi-value">24,381</p>
+              </article>
+              <article class="kpi card soft">
+                <p class="kpi-label">Conversion Rate</p>
+                <p class="kpi-value">6.4%</p>
+              </article>
+              <article class="kpi card soft">
+                <p class="kpi-label">SLA Compliance</p>
+                <p class="kpi-value">99.97%</p>
+              </article>
+            </div>
+            <button class="primary-btn">Run health check</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
