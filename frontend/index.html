@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icons/icon-192.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./icons/icon-192.svg" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Mobile PWA UX Shell</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>Mobile PWA UX</h1>
+      <button id="install-btn" class="secondary hidden" type="button">Установить</button>
+    </header>
+
+    <main id="content" class="content" aria-live="polite">
+      <section id="status-banner" class="status-banner hidden"></section>
+
+      <section id="state-loading" class="state hidden" aria-label="Загрузка">
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+      </section>
+
+      <section id="state-empty" class="state hidden" aria-label="Пустое состояние">
+        <h2>Пока здесь пусто</h2>
+        <p>Добавьте первый элемент или обновите данные.</p>
+        <button class="primary" data-action="retry" type="button">Обновить</button>
+      </section>
+
+      <section id="state-error" class="state hidden" aria-label="Ошибка">
+        <h2>Не удалось загрузить данные</h2>
+        <p id="error-message">Проверьте соединение и попробуйте снова.</p>
+        <button class="primary" data-action="retry" type="button">Повторить</button>
+      </section>
+
+      <section id="state-offline" class="state hidden" aria-label="Оффлайн">
+        <h2>Вы офлайн</h2>
+        <p>Показываем последнее доступное состояние, если оно есть.</p>
+        <button class="primary" data-action="retry" type="button">Проверить сеть</button>
+      </section>
+
+      <section id="state-data" class="state hidden" aria-label="Данные">
+        <ul id="items" class="items"></ul>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Нижняя навигация">
+      <button class="nav-item active" type="button">Главная</button>
+      <button class="nav-item" type="button">Каталог</button>
+      <button class="nav-item" type="button">Избранное</button>
+      <button class="nav-item" type="button">Профиль</button>
+    </nav>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
