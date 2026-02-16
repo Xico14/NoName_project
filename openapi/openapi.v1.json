@@ -1,0 +1,42 @@
+{
+  "info": {
+    "description": "Public API contract for NoName Project.",
+    "title": "NoName Project API",
+    "version": "1.0.0"
+  },
+  "openapi": "3.0.3",
+  "paths": {
+    "/health": {
+      "get": {
+        "operationId": "getHealth",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "status": {
+                      "example": "ok",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "status"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Service is healthy"
+          }
+        },
+        "summary": "Health check"
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.example.com"
+    }
+  ]
+}
