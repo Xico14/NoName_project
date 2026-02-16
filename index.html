@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0f172a" />
+    <title>PWA UX shell</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell" id="appShell">
+      <header class="top-bar">
+        <h1 id="screenTitle">Главная</h1>
+        <button class="action-btn pressable" data-action="refresh" aria-label="Обновить">↻</button>
+      </header>
+
+      <main class="screen-container" id="screenContainer" aria-live="polite"></main>
+
+      <nav class="bottom-nav" aria-label="Нижняя навигация">
+        <button class="nav-item pressable active" data-screen="home" aria-current="page">
+          <span class="icon">⌂</span>
+          <span>Главная</span>
+        </button>
+        <button class="nav-item pressable" data-screen="search">
+          <span class="icon">⌕</span>
+          <span>Поиск</span>
+        </button>
+        <button class="nav-item pressable" data-screen="orders">
+          <span class="icon">◴</span>
+          <span>Заказы</span>
+        </button>
+        <button class="nav-item pressable" data-screen="profile">
+          <span class="icon">☺</span>
+          <span>Профиль</span>
+        </button>
+      </nav>
+    </div>
+
+    <template id="skeletonTemplate">
+      <section class="skeleton-screen">
+        <div class="skeleton skeleton-title"></div>
+        <div class="skeleton skeleton-block"></div>
+        <div class="skeleton skeleton-block"></div>
+        <div class="skeleton skeleton-row"></div>
+        <div class="skeleton skeleton-row"></div>
+      </section>
+    </template>
+
+    <template id="stateTemplate">
+      <section class="state-card">
+        <h2 class="state-title"></h2>
+        <p class="state-text"></p>
+        <button class="retry-btn pressable" data-action="retry">Повторить</button>
+      </section>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
