@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI Catalog</title>
+    <link rel="stylesheet" href="./components.css" />
+  </head>
+  <body>
+    <main class="catalog">
+      <section class="toolbar">
+        <h1>Каталог компонентов</h1>
+        <button class="ui-control" id="themeToggle" type="button">Сменить тему</button>
+      </section>
+
+      <section class="component-section">
+        <div class="section-title"><h2>Button</h2></div>
+        <div class="grid grid-columns">
+          <article class="state-card"><span class="state-label">default</span><button class="ui-control ui-control--primary">Save</button></article>
+          <article class="state-card"><span class="state-label">hover</span><button class="ui-control ui-control--primary is-hover">Save</button></article>
+          <article class="state-card"><span class="state-label">focus</span><button class="ui-control ui-control--primary is-focus">Save</button></article>
+          <article class="state-card"><span class="state-label">disabled</span><button class="ui-control ui-control--primary is-disabled" disabled>Save</button></article>
+          <article class="state-card"><span class="state-label">loading</span><button class="ui-control ui-control--primary is-loading">Save</button></article>
+          <article class="state-card"><span class="state-label">error</span><button class="ui-control is-error">Error</button></article>
+          <article class="state-card"><span class="state-label">success</span><button class="ui-control is-success">Success</button></article>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <div class="section-title"><h2>Card</h2></div>
+        <div class="grid grid-columns">
+          <article class="state-card"><span class="state-label">default</span><div class="ui-card"><h3>Card title</h3><p>Body content</p></div></article>
+          <article class="state-card"><span class="state-label">hover</span><div class="ui-card is-hover"><h3>Card title</h3><p>Body content</p></div></article>
+          <article class="state-card"><span class="state-label">focus</span><div class="ui-card is-focus"><h3>Card title</h3><p>Body content</p></div></article>
+          <article class="state-card"><span class="state-label">disabled</span><div class="ui-card is-disabled"><h3>Card title</h3><p>Body content</p></div></article>
+          <article class="state-card"><span class="state-label">loading</span><div class="ui-card is-loading"><div class="ui-skeleton"></div><div class="ui-skeleton"></div></div></article>
+          <article class="state-card"><span class="state-label">error</span><div class="ui-card is-error"><h3>Card error</h3><p>Body content</p></div></article>
+          <article class="state-card"><span class="state-label">success</span><div class="ui-card is-success"><h3>Card success</h3><p>Body content</p></div></article>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <div class="section-title"><h2>Input & Select</h2></div>
+        <div class="grid grid-columns">
+          <article class="state-card"><span class="state-label">default</span><input class="ui-input" value="Input value" /></article>
+          <article class="state-card"><span class="state-label">hover</span><input class="ui-input is-hover" value="Input value" /></article>
+          <article class="state-card"><span class="state-label">focus</span><input class="ui-input is-focus" value="Input value" /></article>
+          <article class="state-card"><span class="state-label">disabled</span><input class="ui-input is-disabled" value="Input value" disabled /></article>
+          <article class="state-card"><span class="state-label">loading</span><input class="ui-input is-loading" value="Input value" /></article>
+          <article class="state-card"><span class="state-label">error</span><input class="ui-input is-error" value="Input value" /></article>
+          <article class="state-card"><span class="state-label">success</span><input class="ui-input is-success" value="Input value" /></article>
+          <article class="state-card"><span class="state-label">select: default</span><select class="ui-select"><option>Option A</option></select></article>
+          <article class="state-card"><span class="state-label">select: error</span><select class="ui-select is-error"><option>Error option</option></select></article>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <div class="section-title"><h2>Tabs</h2></div>
+        <div class="grid grid-columns">
+          <article class="state-card"><span class="state-label">default</span><div class="ui-tabs"><button class="ui-tab is-active">Overview</button><button class="ui-tab">Billing</button></div></article>
+          <article class="state-card"><span class="state-label">hover</span><div class="ui-tabs"><button class="ui-tab is-active">Overview</button><button class="ui-tab is-hover">Billing</button></div></article>
+          <article class="state-card"><span class="state-label">focus</span><div class="ui-tabs"><button class="ui-tab is-active">Overview</button><button class="ui-tab is-focus">Billing</button></div></article>
+          <article class="state-card"><span class="state-label">disabled</span><div class="ui-tabs"><button class="ui-tab is-active">Overview</button><button class="ui-tab is-disabled">Billing</button></div></article>
+          <article class="state-card"><span class="state-label">loading</span><div class="ui-tabs"><button class="ui-tab is-active">Overview</button><button class="ui-tab is-loading">Billing</button></div></article>
+          <article class="state-card"><span class="state-label">error</span><div class="ui-tabs"><button class="ui-tab is-error">Overview</button><button class="ui-tab">Billing</button></div></article>
+          <article class="state-card"><span class="state-label">success</span><div class="ui-tabs"><button class="ui-tab is-success">Overview</button><button class="ui-tab">Billing</button></div></article>
+        </div>
+      </section>
+
+      <section class="component-section">
+        <div class="section-title"><h2>Modal / Toast / Badge / Skeleton</h2></div>
+        <div class="u-stack">
+          <div class="ui-modal-overlay" style="position: static;">
+            <div class="ui-modal">
+              <h3>Modal default</h3>
+              <p>Состояния модального окна задаются классами.</p>
+              <div class="u-row"><span class="ui-badge">default</span><span class="ui-badge is-error">error</span><span class="ui-badge is-success">success</span></div>
+              <div class="u-row"><div class="ui-skeleton" style="width: 100%;"></div></div>
+            </div>
+          </div>
+          <div class="u-row">
+            <div class="ui-toast">Toast default</div>
+            <div class="ui-toast is-hover">Toast hover</div>
+            <div class="ui-toast is-focus">Toast focus</div>
+            <div class="ui-toast is-disabled">Toast disabled</div>
+            <div class="ui-toast is-loading">Toast loading</div>
+            <div class="ui-toast is-error">Toast error</div>
+            <div class="ui-toast is-success">Toast success</div>
+          </div>
+          <div class="u-row">
+            <span class="ui-badge">default</span>
+            <span class="ui-badge is-hover">hover</span>
+            <span class="ui-badge is-focus">focus</span>
+            <span class="ui-badge is-disabled">disabled</span>
+            <span class="ui-badge is-loading">loading</span>
+            <span class="ui-badge is-error">error</span>
+            <span class="ui-badge is-success">success</span>
+          </div>
+          <div class="grid grid-columns">
+            <article class="state-card"><span class="state-label">Skeleton default</span><div class="ui-skeleton"></div></article>
+            <article class="state-card"><span class="state-label">Skeleton hover</span><div class="ui-skeleton is-hover"></div></article>
+            <article class="state-card"><span class="state-label">Skeleton focus</span><div class="ui-skeleton is-focus"></div></article>
+            <article class="state-card"><span class="state-label">Skeleton disabled</span><div class="ui-skeleton is-disabled"></div></article>
+            <article class="state-card"><span class="state-label">Skeleton loading</span><div class="ui-skeleton is-loading"></div></article>
+            <article class="state-card"><span class="state-label">Skeleton error</span><div class="ui-skeleton is-error"></div></article>
+            <article class="state-card"><span class="state-label">Skeleton success</span><div class="ui-skeleton is-success"></div></article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const root = document.documentElement;
+      const button = document.getElementById('themeToggle');
+      button.addEventListener('click', () => {
+        root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
+      });
+    </script>
+  </body>
+</html>

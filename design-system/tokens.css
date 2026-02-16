@@ -1,0 +1,85 @@
+:root {
+  /* color */
+  --color-bg: #f4f6fb;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f7f8fc;
+  --color-text: #1d2433;
+  --color-text-muted: #5f6b82;
+  --color-border: #d7dced;
+  --color-primary: #4969f5;
+  --color-primary-hover: #3f5ce0;
+  --color-primary-contrast: #ffffff;
+  --color-success: #1c9b64;
+  --color-success-bg: #e9f8f1;
+  --color-error: #cc3848;
+  --color-error-bg: #fdecef;
+  --color-warning: #d28d00;
+  --color-warning-bg: #fff5d9;
+  --color-overlay: rgb(18 24 35 / 48%);
+
+  /* spacing */
+  --spacing-0: 0;
+  --spacing-2xs: 0.125rem;
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 0.75rem;
+  --spacing-lg: 1rem;
+  --spacing-xl: 1.5rem;
+  --spacing-2xl: 2rem;
+
+  /* radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 0.875rem;
+  --radius-pill: 999px;
+
+  /* shadow */
+  --shadow-sm: 0 1px 2px rgb(16 24 40 / 8%);
+  --shadow-md: 0 8px 24px rgb(16 24 40 / 12%);
+  --shadow-lg: 0 16px 36px rgb(16 24 40 / 20%);
+  --shadow-focus: 0 0 0 var(--spacing-2xs) var(--color-primary);
+
+  /* motion */
+  --motion-fast: 120ms;
+  --motion-base: 180ms;
+  --motion-slow: 280ms;
+  --motion-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* z-index */
+  --z-base: 1;
+  --z-dropdown: 20;
+  --z-sticky: 40;
+  --z-modal: 100;
+  --z-toast: 120;
+
+  /* typography */
+  --font-family-base: "Inter", "Segoe UI", Arial, sans-serif;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --line-height-md: 1.4;
+}
+
+[data-theme="dark"] {
+  --color-bg: #0f1420;
+  --color-surface: #171e2d;
+  --color-surface-muted: #1f2638;
+  --color-text: #f5f7ff;
+  --color-text-muted: #a4afc7;
+  --color-border: #313d5b;
+  --color-primary: #7f96ff;
+  --color-primary-hover: #99abff;
+  --color-primary-contrast: #0f1420;
+  --color-success: #49cf8e;
+  --color-success-bg: #183327;
+  --color-error: #ff7c88;
+  --color-error-bg: #40202a;
+  --color-warning: #ffd166;
+  --color-warning-bg: #3f2d08;
+  --color-overlay: rgb(1 5 13 / 64%);
+
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 32%);
+  --shadow-md: 0 8px 24px rgb(0 0 0 / 42%);
+  --shadow-lg: 0 16px 36px rgb(0 0 0 / 52%);
+  --shadow-focus: 0 0 0 var(--spacing-2xs) var(--color-primary);
+}
