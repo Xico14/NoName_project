@@ -1,0 +1,15 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#EAF2FF"/>
+  <rect x="80" y="80" width="1040" height="640" rx="28" fill="#FFFFFF"/>
+  <rect x="80" y="80" width="1040" height="140" rx="28" fill="#0A2540"/>
+  <text x="120" y="165" fill="#FFFFFF" font-size="44" font-family="Arial" font-weight="700">LeadFlow Dev — Minimal Trust</text>
+  <circle cx="180" cy="320" r="60" fill="#2F80ED"/>
+  <text x="270" y="330" fill="#0A2540" font-size="34" font-family="Arial" font-weight="700">Стабильный поток лидов</text>
+  <rect x="120" y="430" width="420" height="170" rx="20" fill="#EAF2FF"/>
+  <text x="150" y="495" fill="#0A2540" font-size="26" font-family="Arial">#0A2540  #2F80ED</text>
+  <text x="150" y="535" fill="#0A2540" font-size="24" font-family="Arial">B2B / Надёжность / Контроль</text>
+  <rect x="620" y="260" width="460" height="320" rx="24" fill="#F8FBFF" stroke="#2F80ED" stroke-width="3"/>
+  <text x="660" y="330" fill="#0A2540" font-size="30" font-family="Arial" font-weight="700">Лого идея</text>
+  <text x="660" y="390" fill="#2F80ED" font-size="52" font-family="Arial" font-weight="700">LF</text>
+  <path d="M740 380 L830 320 L920 380" stroke="#2F80ED" stroke-width="8" fill="none"/>
+</svg>
